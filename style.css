@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'Minecraftia';
+    src: url('/fonte/fonte/minecraftia/Minecraftia-Regular.ttf') format('truetype'),
+         url('/fonte/fonte/minecrafter/Minecrafter.Reg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Minecrafter';
+    src: url('/fonte/fonte/minecrafter/Minecrafter.Reg.woff') format('woff'), 
+         url('/fonte/fonte/minecrafter/Minecrafter.Alt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Minecraftia', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fffafa url('https://wallpapers.com/images/hd/mountain-at-sunset-2560x1440-minecraft-h04b0lb948wcuj8d.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fcf7f7;
+}
+
+header {
+    background: linear-gradient(90deg, #2a2c2b, #268a19);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(90deg, #2a2c2b, #268a19);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    height: 50px;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #feb47b;
+}
+
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Minecrafter', sans-serif;
+    background: linear-gradient(90deg, #2a2c2b86, #268a1973);
+}
+
+h2 {
+    font-family: 'Minecrafter', sans-serif;
+    color: #407926;
+    border-bottom: 3px solid #774824;
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.6;
+    color: #24201d;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #3a9124;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #141212;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #141212;
+    color: white;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul {
+    color: #141212;
+    margin-bottom: 5px;
+}
+
+li{
+    color: #141212;
+}
+caption{
+    color: #141212;
+}
+
+
+section{
+    color: #141212;
+}
+
+.diagram-container {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+
+footer {
+    background: linear-gradient(90deg, #2a2c2b, #32bb20);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}

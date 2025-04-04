@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentacao do Paulo Fodao Que As Mina Pira dos GamesCraft</title>
+    
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        // Importing Mermaid JS
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <img src="https://www.minecraft.net/content/dam/franchise/experiments/1075955/BentoHero_4x_Vanilla_1920x1080.jpg" alt="Imagem de fundo" class="imagem">
+            <div class="texto">
+                <h1>Documentacao PixelBlox</h1>
+            </div>
+        </div>
+    </header>
+    
+    <style>
+        /* Estilos para o header e seus elementosoo */
+        .header {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .header .container {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Ajuste a altura conforme necessário */
+            overflow: hidden;
+        }
+    
+        .header .imagem {
+            width: 100%; /* Faz a imagem cobrir toda a largura da div */
+            height: 100%; /* Faz a imagem cobrir toda a altura da div */
+            object-fit: cover; /* Garante que a imagem cubra toda a área sem distorcer */
+        }
+    
+        .header .texto {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centraliza o texto */
+            text-align: center;
+            color: white;
+        }
+    
+        .header h1 {
+            font-size: 3em; /* Ajuste o tamanho da fonte conforme necessário */
+        }
+
+        /* Estilos do botão de iniciar jogo */
+        #btn-start-game {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        /* Estilos para o iframe que carrega o jogo */
+        #game-frame {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+        
+        /* Botão para fechar o jogo */
+        #btn-close-game {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #dc3545;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1000;
+            display: none;
+        }
+    </style>
+
+        <style>
+            /* Estilos para o header e seus elementosoo */
+            .header {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        
+            .header .container {
+                position: relative;
+                width: 100%;
+                height: 500px; /* Ajuste a altura conforme necessário */
+                overflow: hidden;
+            }
+        
+            .header .imagem {
+                width: 100%; /* Faz a imagem cobrir toda a largura da div */
+                height: 100%; /* Faz a imagem cobrir toda a altura da div */
+                object-fit: cover; /* Garante que a imagem cubra toda a área sem distorcer */
+            }
+        
+            .header .texto {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* Centraliza o texto */
+                text-align: center;
+                color: white;
+            }
+        
+            .header h1 {
+                font-size: 3em; /* Ajuste o tamanho da fonte conforme necessário */
+            }
+        </style>
+    <!-- Botão para iniciar o jogo -->
+    <button id="btn-start-game">Iniciar Jogo</button>
+    
+    <!--Iframe que carregará o jogo (game.html)-->
+    <iframe id="game-frame" src="game.html"></iframe>
+    
+    <!-- Botão para fechar o jogo -->
+    <button id="btn-close-game">Fechar Jogo</button>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Visão Geral do Projeto -->
+        <section id="introducao">
+            <h2>Visão Geral do Projeto</h2>
+            <p>Este documento serve como a documentação oficial do projeto, descrevendo os objetivos, requisitos, riscos, cronograma, orçamento e outras informações importantes para garantir o sucesso do desenvolvimento do jogo.</p>
+            <p>O <strong>PixelCrafter</strong> é um jogo simples de construção no estilo sandbox, inspirado por Minecraft e feito no VS CODE. O objetivo é criar uma versão minimalista do jogo, utilizando conhecimentos básicos sobre HTML, CSS, Script, e ferramentas de auxilio como ChatGPT e DeepSheek. Este projeto oferece uma experiência de construção em um único mundo e interatividade extremamente basica</p>
+        </section>
+
+        <!-- Objetivos do Projeto -->
+        <section id="objetivos">
+            <h2>Objetivos do Projeto</h2>
+            <p>Formalizar o início do projeto PixelCrafter, definindo requisitos iniciais, entregas, premissas, restrições e riscos.</p>
+        </section>
+
+        <!-- Situação Atual e Justificativa -->
+        <section id="situacao">
+            <h2>Situação Atual e Justificativa</h2>
+            <p>O mercado de jogos online para navegadores tem crescido, aumentando a demanda por experiências imersivas, com isso de base .</p>
+        </section>
+
+        <!-- Objetivos SMART -->
+        <section id="smart">
+            <h2>Objetivos SMART</h2>
+            <ul>
+                <li>Desenvolver um MVP funcional em 3 meses.</li>
+                <li>Alcançar 1 usuários no primeiro mês.</li>
+                <li>Garantir tempo de carregamento abaixo de 10 segundos.</li>
+                <li>Receber avaliações positivas de 80% dos usuários.</li>
+            </ul>
+        </section>
+
+        <!-- Estrutura Analítica~~ç -->
+        <section id="estrategia">
+            <h2>Estrutura Analítica do DB</h2>
+            <p>Fases do projeto incluem planejamento, desenvolvimento do MVP, testes, Lançamento final.</p>
+        </section>
+
+        <!-- Requisitos -->
+        <section id="requisitos">
+            <h2>Principais Requisitos</h2>
+            <p>Cadastro de jogadores, construção de blocos.</p>
+        </section>
+
+        <!-- Marcos do Projeto -->
+        <section id="marcos">
+            <h2>Marcos do Projeto</h2>
+            <table>
+                <caption>Principais Marcos do Projeto</caption>
+                <thead>
+                    <tr>
+                        <th>Fase</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Planejamento</td>
+                        <td>24/05/2025</td>
+                    </tr>
+                    <tr>
+                        <td>Testes</td>
+                        <td>25/03/2025</td>
+                    </tr>
+                    <tr>
+                        <td>Lançamento Final</td>
+                        <td>14/04/2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- Partes Interessadas -->
+        <section id="partes">
+            <h2>Partes Interessadas</h2>
+            <p>As principais partes interessadas do projeto incluem:</p>
+            <ul>
+                <li><strong>Clientes:</strong> Jogadores finais do PixelCrafter.</li>
+                <li><strong>Gestor de Projetos:</strong> Responsável pela coordenação e pelo acompanhamento do andamento do projeto.</li>
+                <li><strong>Equipe de Desenvolvimento:</strong> programadores responsáveis pelo código e infraestrutura do jogo.</li>
+                <li><strong>Designers:</strong> Responsáveis pela criação de interfaces, design de personagens, e mapas do jogo.</li>
+                <li><strong>Testadores:</strong> Responsáveis por garantir a qualidade do jogo através de testes constantes.</li>
+                <li><strong>Marketing:</strong> Responsável pela promoção do jogo e comunicação com os jogadores.</li>
+                <li><strong>Investidores:</strong> Apoiadores financeiros do projeto.</li>
+            </ul>
+        </section>
+
+        <!-- Plano de Comunicação -->
+        <section id="comunicacao">
+            <h2>Plano de Comunicação</h2>
+            <p>A comunicação eficaz será crucial para o sucesso do projeto. As principais formas de comunicação incluem:</p>
+            <ul>
+                <li><strong>Reuniões Diarias:</strong> Para garantir o alinhamento da equipe e resolver problemas que surgirem.</li>
+                <li><strong>Relatórios de Progresso:</strong> Envio semanal de relatórios sobre o status do desenvolvimento e testes.</li>
+                <li><strong>Ferramentas de Comunicação:</strong> Uso de ferramentas como Slack e Microsoft Teams para comunicação diária.</li>
+                <li><strong>Documentação Centralizada:</strong> Utilização do Google Drive para armazenar documentos e manter todos os membros da equipe atualizados.</li>
+            </ul>
+        </section>
+
+        <!-- Plano de Gestão de Mudanças -->
+        <section id="mudancas">
+            <h2>Plano de Gestão de Mudanças</h2>
+            <p>O projeto pode passar por mudanças no escopo, cronograma ou requisitos. Essas mudanças serão gerenciadas da seguinte maneira:</p>
+            <ul>
+                <li><strong>Avaliação de Mudanças:</strong> Cada mudança proposta será analisada em termos de impacto no cronograma, orçamento e recursos.</li>
+                <li><strong>Documentação de Mudanças:</strong> Todas as mudanças serão registradas em um documento de controle de mudanças, incluindo a razão, impacto e decisão tomada.</li>
+                <li><strong>Comunicado às Partes Interessadas:</strong> As mudanças serão comunicadas aos stakeholders afetados, com detalhes sobre os impactos.</li>
+            </ul>
+        </section>
+
+        <!-- Riscos e Estratégias de Mitigação -->
+        <section id="riscos">
+            <h2>Riscos e Estratégias de Mitigação</h2>
+            <p>Os principais riscos identificados para o projeto PixelCrafter são:</p>
+            <ul>
+                <li><strong>Risco de Atraso:</strong> Mudanças no cronograma podem ocorrer devido a desafios técnicos. Para mitigar, serão estabelecidos marcos claros e acompanhamento rigoroso.</li>
+                <li><strong>Problemas de Compatibilidade:</strong> O jogo pode não funcionar bem em todas as plataformas. Testes de compatibilidade serão realizados regularmente.</li>
+                <li><strong>Baixo Engajamento de Usuários:</strong> Se o jogo não atrair jogadores, serão feitas melhorias contínuas baseadas no feedback.</li>
+            </ul>
+        </section>
+
+        <!-- Anexos e Links -->
+        <section id="anexos">
+            <h2>Anexos e Links <u></u>teis</h2>
+            <p>Para mais informações, consulte os seguintes documentos e links:</p>
+            <ul>
+                <li><a href="/index.html">Documentação Técnica Completa</a></li>
+            </ul>
+        </section>
+    <script>
+        const btnStart = document.getElementById('btn-start-game');
+        const btnClose = document.getElementById('btn-close-game');
+        const gameFrame = document.getElementById('game-frame');
+        
+        // Exibe o iframe com o jogo e oculta o botão de iniciar
+        btnStart.addEventListener('click', () => {
+            gameFrame.style.display = 'block';
+            btnClose.style.display = 'block';
+            btnStart.style.display = 'none';
+        });
+        
+        // Oculta o iframe com o jogo e exibe novamente o botão de iniciar
+        btnClose.addEventListener('click', () => {
+            gameFrame.style.display = 'none';
+            btnClose.style.display = 'none';
+            btnStart.style.display = 'block';
+        });
+    </script>
+
+     <section></section>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 PixelCrafter. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
