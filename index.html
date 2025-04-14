@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <title>Documentação Técnica do Projeto PixelBlox</title>
+  <title>Documentação Técnica do Projeto PixelCraft</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Estilos personalizados -->
@@ -16,7 +16,7 @@
       line-height: 1.6;
     }
     h1, h2, h3 {
-      color: #2c3e50;
+      color: #185016;
       margin-top: 30px;
     }
     pre {
@@ -57,7 +57,6 @@
       <img src="https://www.minecraft.net/content/dam/franchise/experiments/1075955/BentoHero_4x_Vanilla_1920x1080.jpg" alt="Imagem de fundo" class="img-fluid">
       <div class="text-center text-white" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
         <h1>Documentação Técnica do Projeto PixelBlox</h1>
-        <p>Jogo simples de construção no estilo sandbox feito no Roblox Studio</p>
       </div>
     </div>
   </header>
@@ -162,50 +161,6 @@
               <td>VARCHAR(255)</td>
               <td>URL da imagem representativa do item.</td>
             </tr>
-            <!-- Tabela Mundos -->
-            <tr>
-              <td rowspan="4"><strong>Mundos</strong></td>
-              <td>id</td>
-              <td>INT</td>
-              <td>Identificador único do mundo.</td>
-            </tr>
-            <tr>
-              <td>id_jogador</td>
-              <td>INT</td>
-              <td>Identifica o jogador que criou o mundo.</td>
-            </tr>
-            <tr>
-              <td>nome</td>
-              <td>VARCHAR(255)</td>
-              <td>Nome do mundo.</td>
-            </tr>
-            <tr>
-              <td>descricao</td>
-              <td>TEXT</td>
-              <td>Descrição do ambiente ou cenário.</td>
-            </tr>
-            <!-- Tabela Transações -->
-            <tr>
-              <td rowspan="4"><strong>Transações</strong></td>
-              <td>id</td>
-              <td>INT</td>
-              <td>Identificador único da transação.</td>
-            </tr>
-            <tr>
-              <td>id_jogador</td>
-              <td>INT</td>
-              <td>Referência ao jogador que realizou a transação.</td>
-            </tr>
-            <tr>
-              <td>id_item</td>
-              <td>INT</td>
-              <td>Referência ao item envolvido na transação.</td>
-            </tr>
-            <tr>
-              <td>tipo_transacao</td>
-              <td>VARCHAR(100)</td>
-              <td>Tipo da transação (ex.: compra, troca).</td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -235,7 +190,7 @@
               end
     
               subgraph "🛠️ Testes"
-                  D --> L[Testes Técnicos]
+                  D --> L[Testes Técnicos]  
                   D --> M[Testes com Usuários]
               end
     
@@ -290,44 +245,22 @@
       <h2>8. Scripts SQL</h2>
       <p>Os scripts SQL a seguir exemplificam a criação das principais tabelas do banco de dados:</p>
       <pre>
--- Criação da tabela Jogadores
-CREATE TABLE Jogadores (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    senha VARCHAR(255) NOT NULL,
-    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Criação da tabela Itens
-CREATE TABLE Itens (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(255) NOT NULL,
-    tipo VARCHAR(100),
-    descricao TEXT,
-    imagem_url VARCHAR(255)
-);
-
--- Criação da tabela Mundos
-CREATE TABLE Mundos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    id_jogador INT,
-    nome VARCHAR(255) NOT NULL,
-    descricao TEXT,
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_jogador) REFERENCES Jogadores(id)
-);
-
--- Criação da tabela Transacoes
-CREATE TABLE Transacoes (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    id_jogador INT,
-    id_item INT,
-    tipo_transacao VARCHAR(100),
-    data_transacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_jogador) REFERENCES Jogadores(id),
-    FOREIGN KEY (id_item) REFERENCES Itens(id)
-);
+        -- esse é a tabela que guarda as info do site
+        CREATE TABLE IF NOT EXISTS Jogadores (
+            id SERIAL PRIMARY KEY,
+            nome VARCHAR(255) NOT NULL,
+            email VARCHAR(255) UNIQUE NOT NULL,
+            data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+        
+        -- esse aqui guarda as info do joguinho, só isso memo
+        CREATE TABLE IF NOT EXISTS EstadoJogo (
+            id SERIAL PRIMARY KEY,
+            id_jogador INTEGER NOT NULL REFERENCES Jogadores(id) ON DELETE CASCADE,
+            world_state JSONB,  -- guarda tudo e issae
+            ultima_modificacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+        
       </pre>
     </section>
 
@@ -358,6 +291,34 @@ CREATE TABLE Transacoes (
       <h2>11. Conclusão</h2>
       <p>Esta documentação unificada apresenta a estrutura técnica e os artefatos do projeto PixelBlox, abrangendo desde o modelo de dados até as políticas de governança. A organização dos elementos facilita a manutenção, a análise e o desenvolvimento contínuo do jogo.</p>
     </section>
+
+<!-- Anexos e Links -->
+<section id="anexos">
+  <p>Para mais informações, consulte os seguintes documentos e links:</p>
+  <ul>
+      <li><a href="/index2.html">Voltar para página principal</a></li>
+  </ul>
+</section>
+
+<section id="anexos">
+  <p>Para mais informações, consulte os seguintes documentos e links:</p>
+  <ul>
+      <li><a href="https://git.eaglercraft.rip/eaglercraft/eaglercraft-1.8">Referências utilizadas na criação desta documentação técnica.</a></li>
+  </ul>
+</ul>
+</section>
+
+<div class="container mt-2">
+  <div id="donationCard" class="card donation-card hidden">
+    <div class="card-body text-center">
+      <p>Doe para manter o site atualizado e funcionando!</p>
+      <h4>
+        <button onclick="window.location.href='https://pix.sejaefi.com.br/pagar/015b3a880163a893a9baee17a37f327825a3f5a0.html'">Doe</button>
+      </h4>
+    </div>
+  </div>
+</div>
+
   </main>
 
   <section class="container">
@@ -366,7 +327,7 @@ CREATE TABLE Transacoes (
     <div id="Cadastro"></div>
     <!--Criando um link entre o catalogo-->
 
-    <h2>Cadastre-se no Site para mais Informações</h2>
+    <h2>Cadastre-se no Site para mais Informacoes</h2>
     <!--Titulo-->
 
     <form>
@@ -400,20 +361,8 @@ CREATE TABLE Transacoes (
 
     <div id="user-list">
         <!--<div id="user-list">: Cria um contêiner que provavelmente será preenchido com a lista de usuários cadastrados.-->
-
-        <h3>Usuários Cadastrados do site:</h3>
-        <!--<h3>: Exibe o título "Usuários Cadastrados do site".-->
-
-        <ul></ul><!--<ul>: Lista não ordenada que será preenchida com os itens (provavelmente os nomes dos usuários).-->
-
-    </div><!--Fecha o contêiner <div>-->
-
-</section><!--Fecha a seção <section>.-->
-
-</div><!--Fechando Grupo-->
-
-  <!-- Rodapé -->
 </main>
+</div>
 
 <script src="/script.js"></script>
 
